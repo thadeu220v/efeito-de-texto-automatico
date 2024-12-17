@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto dinâmico</title>
+</head>
+<body>
+    <h1 id="texto">Starting...</h1>
+
+    <script>
+         // controla o seletor do titulo com id texto para ser manipulado
+        const texto = document.getElementById("texto");
+// define o texto a escrever
+        const texto_a_escrever = "Thadeu Henrique dos Anjos";
+let idx = 1;
+// define o tempo para preencher cada letra
+setInterval(escreveTexto, 900);
+
+function escreveTexto() {
+    // adiciona uma letra a cada segundo até que complete o valor do texto a escrever
+    texto.innerText = texto_a_escrever.slice(0, idx)
+	
+	idx++;
+	// se o texto completo for escrito, então volta a 1 caractere
+
+	if(idx > texto_a_escrever.length){
+      idx = 1;
+    }
+
+}
+    </script>
+</body>
+</html>
